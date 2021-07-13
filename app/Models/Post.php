@@ -79,10 +79,8 @@ class Post
 
         // all of the blog post, find the one with a slug that matches the one that was requested
 
-        
-        $posts = static::all();
 
-        return $posts->firstWhere('slug', $slug);
+        return static::all()->firstWhere('slug', $slug);
 
             
         
@@ -103,5 +101,16 @@ class Post
             //     return cache()->remember("posts.{$slug}", 5, fn() =>  file_get_contents($path));
 
             // }
+    }
+
+    public static function findOrFail($slug)
+    {
+        $post =  static::all()->firstWhere('slug', $slug);
+
+        if (! $post) {
+            throw new ModelNotFoundException;
+        }
+
+        return $post;
     }
 }
