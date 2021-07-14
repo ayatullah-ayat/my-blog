@@ -4,6 +4,9 @@ cache('posts.all') - see if cached
 cache()->forget('posts.all') - set null
 cache(['foo' => 'buzz'], now()->addSeconds(3)) - set for 3 seconds
 
+
+$user->pluck('name') -> a collection of name
+
 ----tinker
 
 

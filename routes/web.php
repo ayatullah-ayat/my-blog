@@ -16,10 +16,6 @@ use Illuminate\Support\Facades\File;
 */
 
 Route::get('/', function () {
-
-    // $files = File::files(resource_path("posts/"));
-
-
     $posts = Post::all();
 
     return view('posts', [
@@ -27,81 +23,16 @@ Route::get('/', function () {
             'posts' => $posts
         
         ]);
-
-    // $posts = array_map(function($file){
-        
-    //     $document = YamlFrontMatter::parseFile($file);
-
-    //     return new Post(
-            
-    //         $document->title,
-            
-    //         $document->excerpt,
-            
-    //         $document->date,
-            
-    //         $document->body(),
-
-    //         $document->slug
-        
-    //     );
-
-    // } , $files);
-    
-    
-    // foreach($files as $file) {
-
-    //     $document = YamlFrontMatter::parseFile($file);
-
-    //     $posts[] = new Post(
-            
-    //         $document->title,
-            
-    //         $document->excerpt,
-            
-    //         $document->date,
-            
-    //         $document->body(),
-
-    //         $document->slug
-        
-    //     );
-   
-    // }
-
-    
-    // $document = YamlFrontMatter::parse(file_get_contents(resource_path("posts/my-fourth-post.html")));
-
-    // $posts = Post::all();
-
-    // ddd($posts);
 });
 
 
-Route::get('posts/{post}', function ($slug) {
+Route::get('posts/{post}', function ($id) {
 
     // FInd a post by its slug and pass it to a view called "post"
 
-    $post = Post::find($slug);
+    $post = Post::find($id);
 
     return view('posts/post', [
         'post' => $post
     ]);
-
-    // $path = __DIR__ . '/../resources/posts/' . $slug . '.html';
-
-
-    // if(! file_exists($path)) {
-    //     return redirect('/');
-    //     // abort(404);
-    // }
-
-    
-
-    // catch in the browser for a certain time
-    // $post = cache()->remember("posts.{$slug}", 5, fn() =>  file_get_contents($path));
-
-    // return view('posts/post', [
-    //     'post' => file_get_contents($path)
-    // ]);
-})->where('post', '[A-z_/-]+');
+});
