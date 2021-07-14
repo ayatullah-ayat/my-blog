@@ -21,6 +21,8 @@ class CreatePostsTable extends Migration
             $table->text('excerpt');
 
             $table->text('body');
+
+            $table->text('slug');
             
             $table->timestamps();
 

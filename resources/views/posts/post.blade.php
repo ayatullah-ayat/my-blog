@@ -21,7 +21,7 @@
         <h2>My Posts</h2>
         <a href="/">Back</a>
 
-        <h5 class="card-header">{{ $post->title }}</h5>
+        <h5 class="card-header">{!! $post->title !!}</h5>
         <div class="card-body">
             <p class="card-text"><?= $post->body ?></p>
         </div>

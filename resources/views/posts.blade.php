@@ -3,7 +3,7 @@
 
           <div class="card">
         
-            <a href="/posts/{{ $post->id }}">
+            <a href="/posts/{{ $post->slug }}">
         
               <h5 class="card-header">{{ $post->title }}</h5>
         
