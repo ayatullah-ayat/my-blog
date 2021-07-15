@@ -10,6 +10,7 @@
             </a>
         
             <div class="card-body">
+              <p><a href="{{ $post->slug }}">{{ $post->category->name }}</a></p>
         
               <p class="card-text">{{ $post->excerpt }}</p>
         
