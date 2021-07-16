@@ -16,35 +16,48 @@ use Illuminate\Support\Facades\File;
 |
 */
 
+
+
+
+
 Route::get('/', function () {
+    return view('posts');
+});
+
+
+Route::get('/post/{id}', function () {
+    return view('post');
+});
+
+// Route::get('/', function () {
     
-    // \Illuminate\Support\Facades\DB::listen(function ($query) {
-    //     logger($query->sql, $query->bindings);
-    // });
+//     // \Illuminate\Support\Facades\DB::listen(function ($query) {
+//     //     logger($query->sql, $query->bindings);
+//     // });
 
-    return view('posts', [
+//     return view('posts', [
 
-            'posts' => Post::with('category')->get()
+//             'posts' => Post::with('category')->get()
         
-        ]);
-});
+//         ]);
+// });
 
 
-Route::get('posts/{post}', function (Post $post) {
+// Route::get('posts/{post}', function (Post $post) {
 
-    // FInd a post by its slug and pass it to a view called "post"
+//     // FInd a post by its slug and pass it to a view called "post"
 
-    return view('posts/post', [
+//     return view('posts/post', [
 
-        'post' => $post
+//         'post' => $post
     
-    ]);
-});
+//     ]);
+// });
 
-Route::get('categories/{category:slug}', function (Category $category) {
-    return view('categories/category', [
+// Route::get('categories/{category:slug}', function (Category $category) {
+//     return view('categories/category', [
         
-        'category' => $category
+//         'category' => $category
     
-    ]);
-});
+//     ]);
+// });
