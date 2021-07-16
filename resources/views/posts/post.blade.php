@@ -7,7 +7,7 @@
         
         <div class="card-body">
 
-            <a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name }} </a>
+            <a href="">By Ayat </a>in<a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name }} </a>
 
             <p class="card-text"><?= $post->body ?></p>
         

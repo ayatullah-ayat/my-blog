@@ -15,8 +15,6 @@
 
     <div class="container">
       
-        <h2>My Posts</h2>
-      
         {{ $slot }}
 
     </div>

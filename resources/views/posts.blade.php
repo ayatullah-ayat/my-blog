@@ -1,4 +1,6 @@
 <x-layout>
+
+
       @foreach ($posts as $post)
 
           <div class="card">
