@@ -21,12 +21,20 @@ use Illuminate\Support\Facades\File;
 
 
 Route::get('/', function () {
-    return view('posts');
+    $title = 'My blog posts';
+
+    return view('posts', [
+        'my_title' => $title,
+        'author_name' => 'Ayat',
+        'date' => '16/7/2021'
+    ]);
 });
 
 
-Route::get('/post/{id}', function () {
-    return view('post');
+Route::get('/post/{id}', function ($id) {
+    ddd(file_get_contents(__DIR__. '/../resources/posts/first-post.blade.php'));
+
+    return view('single-post');
 });
 
 // Route::get('/', function () {

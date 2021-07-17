@@ -16,32 +16,12 @@
 <body>
 
     <div class="container">
-      
-      <div class="card text-white bg-secondary mb-3">
-        <div class="card-header">post 1</div>
-        <div class="card-body">
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ex saepe tenetur commodi perspiciatis? Nulla saepe id doloremque nesciunt doloribus? </p>
-        </div>
-      </div>
 
-      
+        @yield('content')
 
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Optional JavaScript -->
+           <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -49,12 +29,3 @@
     <script src="/script.js"></script>
 </body>
 </html>
-  
-  
-  
- 
-      
-
-
-        
-    
