@@ -23,84 +23,102 @@ class DatabaseSeeder extends Seeder
 
     public function run()
     {
-        User::truncate();
-
-        Post::truncate();
-
-        Category::truncate();
-
-        $user = User::factory()->create();
-
-        $personal = Category::create([
-            
-            'name' => 'Personal',
-            
-            'slug' => 'personal'
-
+        $user = User::factory()->create([
+            'name' => 'Ayatullah Khameni'
         ]);
 
-        $work = Category::create([
-            
-            'name' => 'Work',
-            
-            'slug' => 'work'
-
-        ]);
-
-        $social = Category::create([
-            
-            'name' => 'Social',
-            
-            'slug' => 'Social'
-
-        ]);
-
-        Post::create([
-
-            'user_id' => $user->id,
-
-            'category_id' => $personal->id,
-
-            'title' => 'personal blog',
-
-            'excerpt' => 'personal blog excerpt',
-
-            'body' => 'personal blog body',
-
-            'slug' => 'my-personal-post'
-
-        ]);
-
-        Post::create([
-
-            'user_id' => $user->id,
-
-            'category_id' => $work->id,
-
-            'title' => 'work blog',
-
-            'excerpt' => 'work blog excerpt',
-
-            'body' => 'work blog body',
-
-            'slug' => 'my-work-post'
-
-        ]);
-
-        Post::create([
-
-            'user_id' => $user->id,
-
-            'category_id' => $social->id,
-
-            'title' => 'social blog',
-
-            'excerpt' => 'social blog excerpt',
-
-            'body' => 'social blog body',
-
-            'slug' => 'my-social-post'
-
+        Post::factory(5)->create([
+            'user_id' => $user->id
         ]);
     }
 }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //     $personal = Category::create([
+            
+    //         'name' => 'Personal',
+            
+    //         'slug' => 'personal'
+
+    //     ]);
+
+    //     $work = Category::create([
+            
+    //         'name' => 'Work',
+            
+    //         'slug' => 'work'
+
+    //     ]);
+
+    //     $social = Category::create([
+            
+    //         'name' => 'Social',
+            
+    //         'slug' => 'Social'
+
+    //     ]);
+
+    //     Post::create([
+
+    //         'user_id' => $user->id,
+
+    //         'category_id' => $personal->id,
+
+    //         'title' => 'personal blog',
+
+    //         'excerpt' => 'personal blog excerpt',
+
+    //         'body' => '<p>personal blog body</p>',
+
+    //         'slug' => 'my-personal-post'
+
+    //     ]);
+
+    //     Post::create([
+
+    //         'user_id' => $user->id,
+
+    //         'category_id' => $work->id,
+
+    //         'title' => 'work blog',
+
+    //         'excerpt' => 'work blog excerpt',
+
+    //         'body' => '<p>work blog body</p>',
+
+    //         'slug' => 'my-work-post'
+
+    //     ]);
+
+    //     Post::create([
+
+    //         'user_id' => $user->id,
+
+    //         'category_id' => $social->id,
+
+    //         'title' => 'social blog',
+
+    //         'excerpt' => '<p>social blog excerpt</p>',
+
+    //     'body' => '<p>social blog body</p>',
+
+    //         'slug' => 'my-social-post'
+
+    //     ]);
+    //

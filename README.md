@@ -7,8 +7,17 @@ cache(['foo' => 'buzz'], now()->addSeconds(3)) - set for 3 seconds
 
 $user->pluck('name') -> a collection of name
 
+
 ----tinker
 
+
+---questions
+
+1. Why tinker give back json data instead of associative array
+
+2. Should i keep the foreign id same as Model name ( Post::with('user') )
+
+---questions
 
 
 
