@@ -11,7 +11,7 @@ $user->pluck('name') -> a collection of name
 ----tinker
 
 
----questions
+questions---
 
 1. Why tinker give back json data instead of associative array
 
