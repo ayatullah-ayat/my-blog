@@ -20,7 +20,9 @@ questions---
 ---questions
 
 
+shortcut key-------
 
+ctl + d - select all images/contents
 
 
 
