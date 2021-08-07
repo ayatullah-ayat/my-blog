@@ -4,7 +4,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\File;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,34 +16,8 @@ use Illuminate\Support\Facades\File;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    // \Illuminate\Support\Facades\DB::listen(function ($query) {
-    //     logger($query->sql, $query->bindings);
-    // });
-
-    $posts = Post::latest();
-
-    if (request('search')) {
-        $posts
-            ->where('title', 'like', '%' . request('search') . '%')
-            ->orWhere('body', 'like', '%' .request('search') . '%');
-    }
-    
-    return view('posts', [
-            'posts' => $posts->get(),
-            'categories' => Category::all()
-        ]);
-})->name('home');
-
-
-Route::get('posts/{post}', function (Post $post) {
-    // FInd a post by its slug and pass it to a view called "post"
-    return view('posts/post', [
-
-        'post' => $post
-    
-    ]);
-});
+Route::get('/', [PostController::class, 'index'])->name('home');
+Route::get('posts/{post}', [PostController::class, 'show']);
 
 Route::get('categories/{category:slug}', function (Category $category) {
     return view('posts', [
