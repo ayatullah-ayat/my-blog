@@ -12,7 +12,8 @@ class PostController extends Controller
     {
         return view('posts', [
             'posts' => $this->getPosts(),
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'currentCategory' => Category::firstWhere('slug', request('category'))
         ]);
     }
 
@@ -25,8 +26,7 @@ class PostController extends Controller
 
     public function getPosts()
     {
-
-        return Post::latest('created_at')->filter(request(['search']))->get();
+        return Post::latest('created_at')->filter(request(['search', 'category']))->get();
         // if (request('search')) {
         //     $posts
         //     ->where('title', 'like', '%' . request('search') . '%')
